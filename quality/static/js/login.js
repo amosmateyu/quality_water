@@ -5,6 +5,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const errorText = document.getElementById("errorText");
   const successMessage = document.getElementById("successMessage");
   const successText = document.getElementById("successText");
+  const passwordToggle = document.getElementById("passwordToggle");
+
+
+
+
+   // Toggle password visibility
+ passwordToggle.addEventListener("click", () => {
+  const type = passwordInput.type === "password" ? "text" : "password";
+  passwordInput.type = type;
+  passwordToggle.innerHTML =
+    type === "password"
+      ? '<i class="fas fa-eye"></i>'
+      : '<i class="fas fa-eye-slash"></i>';
+});
 
   loginForm.addEventListener("submit", async (event) => {
     event.preventDefault();
