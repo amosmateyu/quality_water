@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - Water Quality Monitoring System</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/about.css') }}">
+  
+</head>
+
+<body>
+  <header>
+    <div class="header-container">
+      <a href="{{ url_for('main.home') }}" class="logo-link">
+        <div class="logo">
+          <img src="https://i.ibb.co/Y72pJfQc/log.png" alt="Aqua Pure Logo" class="logo-img" />
+          <div class="logo-text">Water Lab</div>
+        </div>
+      </a>
+
+      <div class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="{{ url_for('main.home') }}"><i class="fas fa-home mobile-icon"></i> Home</a></li>
+        <li><a href="{{ url_for('main.monitoring') }}"><i class="fas fa-tachometer-alt mobile-icon"></i> Monitor</a></li>
+        <li><a href="{{ url_for('main.alerts') }}"><i class="fas fa-triangle-exclamation mobile-icon"></i> Alerts</a></li>
+        <li><a href="{{ url_for('main.about') }}"><i class="fas fa-info-circle mobile-icon"></i> About</a></li>
+        <li><a href="{{ url_for('auth.logout') }}"><i class="fas fa-sign-out-alt mobile-icon"></i> Logout</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>About Water Quality Monitoring</h2>
+      <p>Ensuring safe drinking water through advanced analysis</p>
+    </div>
+  </section>
+
+  <main>
+    <section class="about-section">
+      <h2 class="section-title">Why Clean Water Matters</h2>
+      <div class="content-grid">
+        <div class="content-text">
+          <p>Clean water keeps us healthy and supports daily life.</p>
+          <p>It’s vital for farming, industry, and the environment.</p>
+          <p>The system helps ensure water stays safe.</p>
+        </div>
+
+        <div class="content-image">
+          <img src="https://i.ibb.co/LzN2LbSV/water-5.png" alt="Clean Water">
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section how-it-works">
+      <h2 class="section-title">How It Works</h2>
+      <div class="content-text">
+        <p>environmental health officers collect water samples from different sources and take them to the lab for testing.</p>
+        <p>In the lab, chemists use tools and sensors to check each water parameter.</p>
+        <p>The results are analyzed to find out if the water is safe to drink.</p>
+      </div>
+    </section>
+    
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>Everyone deserves clean water.</p>
+
+    </div>
+  </footer>
+  <script src="{{ url_for('static', filename='js/menu_button.js') }}"></script>
+
+</body>
+</html>

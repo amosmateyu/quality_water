@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Water Quality Results</title>
+
+  <!-- Fonts and Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/results.css') }}">
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="{{ url_for('main.home') }}" class="logo-link">
+        <div class="logo">
+          <img src="https://i.ibb.co/Y72pJfQc/log.png" alt="Aqua Pure Logo" class="logo-img" />
+          <div class="logo-text">Water Lab</div>
+        </div>
+      </a>
+      <div class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+      </div>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="{{ url_for('main.home') }}"><i class="fas fa-home mobile-icon"></i> Home</a></li>
+          <li><a href="{{ url_for('main.monitoring') }}"><i class="fas fa-tachometer-alt mobile-icon"></i> Monitor</a></li>
+          <li><a href="{{ url_for('main.alerts') }}"><i class="fas fa-triangle-exclamation mobile-icon"></i> Alerts</a></li>
+          <li><a href="{{ url_for('main.about') }}"><i class="fas fa-info-circle mobile-icon"></i> About</a></li>
+          <li><a href="{{ url_for('auth.logout') }}"><i class="fas fa-sign-out-alt mobile-icon"></i> Logout</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Water Quality Analysis Results</h2>
+      <p>Comprehensive analysis of your water sample with detailed insights</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main>
+    <div class="prediction-container">
+      <div class="prediction-card">
+        <!-- Results Overview -->
+        <div class="results-grid">
+          
+          <!-- Overall Result -->
+          <div class="result-card">
+            <h4><i></i> Water Sample Result</h4>
+            <p id="water-status">Loading...</p>
+          </div>
+
+          <!-- Recommendations -->
+          <div class="result-card">
+            <h4><i></i> Recommendations</h4>
+            <p id="recommendations">Loading...</p>
+          </div>
+
+          <!-- Parameters -->
+          <div class="result-card">
+            <h4><i></i> Your Water Parameters</h4>
+            <p>
+              <strong>pH Level:</strong> <span id="ph">--</span><br>
+              <strong>Hardness:</strong> <span id="hardness">--</span> mg/L<br>
+              <strong>Chloramines:</strong> <span id="chloramines">--</span> mg/L<br>
+              <strong>Sulfate:</strong> <span id="sulfate">--</span> mg/L<br>
+              <strong>Trihalomethanes:</strong> <span id="trihalomethanes">--</span> μg/L<br>
+              <strong>Organic Carbon:</strong> <span id="organic_carbon">--</span> mg/L
+            </p>
+          </div>
+
+          <!-- Risk Analysis -->
+          <div class="result-card">
+            <h4><i></i> Risk Analysis</h4>
+            <p id="risk-analysis">Loading...</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>Everyone deserves clean water.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="{{ url_for('static', filename='js/menu_button.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/results.js') }}"></script>
+</body>
+</html>

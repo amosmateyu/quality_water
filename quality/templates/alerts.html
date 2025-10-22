@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Water Quality Alerts - Water Lab</title>
+
+  <!-- Fonts and Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/alerts.css') }}">
+  
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="{{ url_for('main.home') }}" class="logo-link">
+        <div class="logo">
+          <img src="https://i.ibb.co/Y72pJfQc/log.png" alt="Aqua Pure Logo" class="logo-img" />
+          <div class="logo-text">Water Lab</div>
+        </div>
+      </a>
+      <div class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+      </div>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="{{ url_for('main.home') }}"><i class="fas fa-home mobile-icon"></i> Home</a></li>
+          <li><a href="{{ url_for('main.monitoring') }}"><i class="fas fa-tachometer-alt mobile-icon"></i> Monitor</a></li>
+          <li class="alerts-nav-item"><a href="{{ url_for('main.alerts') }}" class="active"><i class="fas fa-exclamation-triangle mobile-icon"></i> Alerts</a></li>
+          <li><a href="{{ url_for('main.about') }}"><i class="fas fa-info-circle mobile-icon"></i> About</a></li>
+          <li><a href="{{ url_for('auth.logout') }}"><i class="fas fa-sign-out-alt mobile-icon"></i> Logout</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Water Quality Alerts</h2>
+      <p>water quality issues requiring immediate attention</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main>
+    <div class="alert-history">
+      <table class="history-table">
+        <thead>
+          <tr>
+            <th>Parameter</th>
+            <th>impact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="status-badge status-pure">pH</span></td>
+            <td>High pH water isn’t pleasant to drink.</td>
+          </tr>
+          <tr>
+            <td><span class="status-badge status-not-pure">Hardness</span></td>
+            <td>Hard water can cause stomach discomfort.</td>
+          </tr>
+          <tr>
+            <td><span class="status-badge status-pure">Chloramines</span></td>
+            <td>Water may taste or smell chemical.</td>
+          </tr>
+          <tr>
+            <td><span class="status-badge status-not-pure">Sulfate</span></td>
+            <td>Can cause laxative effects and taste issues.</td>
+          </tr>
+          <tr>
+            <td><span class="status-badge status-pure">Organic Carbon</span></td>
+            <td>Organic compounds can make water taste or smell earthy, musty, or chemical.</td>
+          </tr>
+          <tr>
+            <td><span class="status-badge status-not-pure">Trihalomethanes</span></td>
+            <td>very high exposure can cause nausea, dizziness, or irritation.</td>
+          </tr>
+        
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>Everyone deserves clean water.</p>
+    </div>
+  </footer>
+  <script src="{{ url_for('static', filename='js/monitor.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/menu_button.js') }}"></script>
+</body>
+</html>
